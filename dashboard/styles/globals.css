@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-primary-light antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold text-primary tracking-tight;
+  }
+}
+
+@layer components {
+
+  /* Modern Card */
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-slate-100 p-6 transition-all duration-200;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply bg-accent text-white hover:bg-accent-dark focus:ring-accent shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 hover:text-slate-900 focus:ring-slate-200 hover:border-slate-300;
+  }
+
+  .btn-danger {
+    @apply bg-red-50 text-red-600 border border-red-100 hover:bg-red-100 focus:ring-red-200;
+  }
+
+  /* Forms */
+  .input {
+    @apply w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-900 focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all placeholder:text-slate-400;
+  }
+
+  /* Status Badges */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold;
+  }
+
+  .badge-success {
+    @apply bg-emerald-50 text-emerald-700 border border-emerald-100;
+  }
+
+  .badge-warning {
+    @apply bg-amber-50 text-amber-700 border border-amber-100;
+  }
+
+  .badge-danger {
+    @apply bg-rose-50 text-rose-700 border border-rose-100;
+  }
+
+  .badge-info {
+    @apply bg-blue-50 text-blue-700 border border-blue-100;
+  }
+
+  .badge-neutral {
+    @apply bg-slate-50 text-slate-600 border border-slate-100;
+  }
+
+  /* Page Headers */
+  .page-header {
+    @apply mb-8;
+  }
+
+  .page-title {
+    @apply text-2xl md:text-3xl mb-1 text-primary;
+  }
+
+  .page-subtitle {
+    @apply text-slate-500 text-sm md:text-base;
+  }
+
+  /* Data Table */
+  .data-table {
+    @apply w-full text-sm;
+  }
+
+  .data-table thead {
+    @apply bg-slate-50/80;
+  }
+
+  .data-table thead th {
+    @apply py-3 px-4 text-xs font-semibold uppercase tracking-wider text-slate-400 border-b border-slate-100;
+  }
+
+  .data-table tbody tr {
+    @apply border-b border-slate-50 hover:bg-slate-50/50 transition-colors;
+  }
+
+  .data-table tbody td {
+    @apply py-3.5 px-4 text-slate-600;
+  }
+
+  /* Toast */
+  .toast {
+    @apply fixed top-4 right-4 px-5 py-3 rounded-xl shadow-lg z-50 text-sm font-medium;
+  }
+
+  .toast-success {
+    @apply bg-emerald-500 text-white shadow-emerald-200;
+  }
+
+  .toast-error {
+    @apply bg-rose-500 text-white shadow-rose-200;
+  }
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
